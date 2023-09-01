@@ -34,3 +34,4 @@ https://varvaranamar.github.io/movies-explorer-frontend/
 
 ### Ссылка на pull-request
 
+https://github.com/VarvaraNamar/movies-explorer-frontend/pull/1
