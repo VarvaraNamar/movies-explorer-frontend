@@ -30,4 +30,7 @@
 
 ### Ссылка на репозиторий
 
+https://varvaranamar.github.io/movies-explorer-frontend/
+
+### Ссылка на pull-request
 
