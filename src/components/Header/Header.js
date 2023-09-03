@@ -36,14 +36,14 @@ function Header() {
     <>
       {getShowHeaderOne() && (
         <header className="header">
-          <Link to="/" className="form__logo">
+          <Link to="/" className="logo">
             <img src={logo} alt="лого" />
           </Link>
           <div className="header__button-container">
             <Link to="/signup" className="header__button">
               Регистрация
             </Link>
-            <Link to="/signin" className="header__button header__button-color">
+            <Link to="/signin" className="header__button header__button_color">
               Войти
             </Link>
           </div>
@@ -52,20 +52,14 @@ function Header() {
 
       {getShowHeaderTwo() && (
         <header className="header header_green">
-          <Link to="/" className="form__logo">
+          <Link to="/" className="logo">
             <img src={logo} alt="лого" />
           </Link>
-          <div className="header__button-container_films">
-            <NavLink
-              className="header__button header__button_active"
-              to="/movies"
-            >
+          <div className="header__button-container header__button-container_films">
+            <NavLink className="header__button" to="/movies">
               Фильмы
             </NavLink>
-            <NavLink
-              className="header__button header__button_active"
-              to="/saved-movies"
-            >
+            <NavLink className="header__button" to="/saved-movies">
               Сохранённые фильмы
             </NavLink>
           </div>

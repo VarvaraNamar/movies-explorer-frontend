@@ -6,12 +6,12 @@
   max-width: 396px;
 }
 
-.form__logo {
+.logo {
   width: 38px;
   height: 38px;
 }
 
-.form__logo:hover {
+.logo:hover {
   cursor: pointer;
   opacity: 0.6;
 }

@@ -13,18 +13,18 @@ function Navigation({ handleCloseMenu }) {
           onClick={handleCloseMenu}
         ></button>
         <nav className="navigation__links">
-          <NavLink to="/" className="navigation__link navigation__link_active">
+          <NavLink to="/" className="navigation__link">
             Главная
           </NavLink>
           <NavLink
             to="/movies"
-            className="navigation__link navigation__link_active"
+            className="navigation__link"
           >
             Фильмы
           </NavLink>
           <NavLink
             to="/saved-movies"
-            className="navigation__link navigation__link_active"
+            className="navigation__link"
           >
             Сохранённые фильмы
           </NavLink>

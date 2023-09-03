@@ -62,7 +62,14 @@
   color: #3ddc84;
 }
 
+.about-me__wrapper-ava {
+  width: 270px;
+  height: 327px;
+  margin: 0;
+}
+
 .about-me__ava {
+  display: block;
   width: 270px;
   height: 327px;
   object-fit: cover;
@@ -70,11 +77,12 @@
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 10px;
+  margin: 0;
 }
 
 @media screen and (max-width: 1023px) {
   .about-me {
-    padding: 90px 50px;
+    padding: 86px 50px;
   }
 
   .about-me__text-container {
@@ -148,7 +156,9 @@
   }
 
   .about-me__ava {
-    width: 292px;
-    height: 352px;
+    /*width: 292px;
+    height: 352px;*/
+    width: 270px;
+    height: 327px;
   }
 }

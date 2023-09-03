@@ -31,6 +31,8 @@ function Login() {
           className="form__input"
           type="password"
           placeholder="пароль"
+          minLength="4"
+          maxLength="10"
           required
         />
         <span className="form__input-error">Введите пароль</span>

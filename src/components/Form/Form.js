@@ -6,7 +6,7 @@ import "./Form.css"
 function Form({ linkText, link, children, title, buttonText, question }) {
   return (
     <div className="form__block">
-      <Link to="/" className="form__logo">
+      <Link to="/" className="logo">
         <img src={logo} alt="лого" />
       </Link>
       <h3 className="form__title">{title}</h3>

@@ -15,7 +15,7 @@ function Promo() {
             Листайте ниже, чтобы узнать больше про этот проект и его создателя.
           </p>
         </div>
-        <img className="promo__planet" src={landingLogo} alt="изображение" />
+        <img className="promo__planet" src={landingLogo} alt="графическое изображение планеты земля" />
 
         <NavTab />
       </div>
