@@ -1,6 +1,6 @@
 import { handleSendingRequest } from "./utils"
 
-export const BASE_URL = "https://api.movies.nomoredomainsicu.ru"
+export const BASE_URL = "https://api.varvara.diplom.nomoredomainsicu.ru"
 // export const BASE_URL = "http://localhost:3000"
 
 export const getContent = (token) => {
