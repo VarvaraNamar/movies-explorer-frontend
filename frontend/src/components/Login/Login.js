@@ -30,6 +30,7 @@ function Login({ onAuthorization, isLoading }) {
       <label className="form__label">
         E-mail
         <input
+          id="email-input"
           name="email"
           className="form__input"
           type="email"
@@ -46,6 +47,7 @@ function Login({ onAuthorization, isLoading }) {
       <label className="form__label">
         Пароль
         <input
+          id="password-input"
           name="password"
           className="form__input"
           type="password"

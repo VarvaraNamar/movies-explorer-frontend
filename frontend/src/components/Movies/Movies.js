@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react"
 import "./Movies.css"
+import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import SearchForm from "../SearchForm/SearchForm"
 import MoviesCardList from "../MoviesCardList/MoviesCardList"
 import { findShortMovie, filterByDuration } from "../../utils/utils"
 import * as movies from "../../utils/MoviesApi"
 
-function Movies({ handleLikeFilm, onDeleteCard, savedMovies }) {
+function Movies({ handleLikeFilm, onDeleteCard, savedMovies, loggedIn }) {
   // Состояния компонента
   const [isLoading, setIsLoading] = useState(false)
   const [initialMovies, setInitialMovies] = useState([])
@@ -101,6 +102,7 @@ function Movies({ handleLikeFilm, onDeleteCard, savedMovies }) {
 
   return (
     <section className="movies">
+      <Header loggedIn={loggedIn} />
       <SearchForm 
       onSearchMovies={handleMovieSearch}
       onFilterMovies={switchToShortFilm}

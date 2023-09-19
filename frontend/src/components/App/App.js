@@ -197,15 +197,15 @@ function App() {
     }
   }, [isOpen])
 
-  const getShowHeader = () => {
-    const { pathname } = location
-    return (
-      pathname === "/" ||
-      pathname === "/movies" ||
-      pathname === "/saved-movies" ||
-      pathname === "/profile"
-    )
-  }
+  // const getShowHeader = () => {
+  //   const { pathname } = location
+  //   return (
+  //     pathname === "/" ||
+  //     pathname === "/movies" ||
+  //     pathname === "/saved-movies" ||
+  //     pathname === "/profile"
+  //   )
+  // }
 
   const getShowFooter = () => {
     const { pathname } = location
@@ -216,9 +216,13 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <div className="page__wrapper">
-        {getShowHeader() && <Header loggedIn={loggedIn}/>}
+        
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<>
+                  <Header loggedIn={loggedIn}/> 
+                  <Main />
+                  <Footer />
+                </>} />
           <Route path="/movies" element={
                 <ProtectedRoute
                   path="/movies"

@@ -41,6 +41,7 @@ function SearchForm({ onSearchMovies, onFilterMovies, isShortMovies }) {
       <form className="search__form" id="form" onSubmit={updateUserInfo}>
         <input
           className="search__input"
+          id="search-input"
           name="query"
           placeholder="Фильм"
           type="text"

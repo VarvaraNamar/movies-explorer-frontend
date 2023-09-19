@@ -10,7 +10,8 @@ const useForm = () => {
 
   // изменение инпутов
   const handleChangeInput = (event) => {
-    const { name, value } = event.target;
+    const name = event.target.name
+    const value = event.target.value
     setInputValues({
       ...inputValues,
       [name]: value,

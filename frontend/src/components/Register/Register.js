@@ -29,6 +29,7 @@ function Register({ onRegister, isLoading }) {
       <label className="form__label">
         Имя
         <input
+          id="name-input"
           className="form__input"
           name="name"
           type="text"
@@ -44,7 +45,8 @@ function Register({ onRegister, isLoading }) {
       <label className="form__label">
         E-mail
         <input
-        className="form__input"
+          id="email-input"
+          className="form__input"
           name="email"
           pattern={EMAIL_REGEX}
           type="email"
@@ -60,6 +62,7 @@ function Register({ onRegister, isLoading }) {
       <label className="form__label">
         Пароль
         <input
+          id="password-input"
           className="form__input"
           name="password"
           type="password"

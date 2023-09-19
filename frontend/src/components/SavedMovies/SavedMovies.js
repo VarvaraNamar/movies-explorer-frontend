@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react"
 import SearchForm from "../SearchForm/SearchForm"
+import Header from "../Header/Header"
 import MoviesCardList from "../MoviesCardList/MoviesCardList"
 import Footer from "../Footer/Footer"
 import { filterByDuration, findShortMovie } from "../../utils/utils"
 
-function SavedMovies({ savedMovies, onDeleteCard }) {
+function SavedMovies({ savedMovies, onDeleteCard, loggedIn }) {
   
   // список фильмов по запросу
   const [filteredMovies, setFilteredMovies] = useState(savedMovies)
@@ -40,6 +41,7 @@ function SavedMovies({ savedMovies, onDeleteCard }) {
 
   return (
     <section className="movies">
+      <Header loggedIn={loggedIn} />
       <SearchForm 
         onSearchMovies={handleMovieSearch}
         onFilterMovies={switchToShortFilm}/>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react"
 import { NavLink } from "react-router-dom"
 import "./Profile.css"
+import Header from "../Header/Header"
 import CurrentUserContext from "../../contexts/CurrentUserContext"
 import useForm from "../../hooks/useForm"
 import { EMAIL_REGEX } from "../../utils/constants"
 
-function Profile({ isLoading, signOut, onUpdateUser }) {
+function Profile({ isLoading, loggedIn, signOut, onUpdateUser }) {
   const currentUser = useContext(CurrentUserContext)
   const { inputValues, handleChangeInput, isFormValid, updateForm, errors } =
     useForm()
@@ -39,9 +40,10 @@ function Profile({ isLoading, signOut, onUpdateUser }) {
 
   return (
     <>
+    <Header loggedIn={loggedIn} />
       <section className="profile">
         <h3 className="profile__title">Привет, {currentUser.name}!</h3>
-        <form className="profile__form" noValidate onSubmit={updateUserInfo}>
+        <form className="profile__form" id="form" noValidate onSubmit={updateUserInfo}>
           <label className="profile__label">
             Имя
             <input
@@ -73,9 +75,10 @@ function Profile({ isLoading, signOut, onUpdateUser }) {
             />
             <span className="profile__input-error">{errors.email}</span>
           </label>
-          <button type="submit" disabled={!isFormValid ? true : false}
+          <button type="submit" 
+            disabled={!isFormValid ? true : false}
             className={
-              isLoading || isLastValues || !isFormValid
+              !isFormValid || isLoading || isLastValues
                 ? "profile__button-save form__button-save_inactive"
                 : "profile__button-save"
             }>

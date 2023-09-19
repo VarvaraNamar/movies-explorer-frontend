@@ -1,28 +1,28 @@
 import React, { useState } from "react"
-import { Link, NavLink, useLocation } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import Navigation from "../Navigation/Navigation"
 import logo from "../../images/logo.svg"
 import menu from "../../images/menu-button.svg"
 import account from "../../images/profile.svg"
 import "./Header.css"
 
-function Header() {
-  const location = useLocation()
+function Header({ loggedIn }) {
+  // const location = useLocation()
   const [isClicked, setIsClicked] = useState(false)
 
-  const getShowHeaderOne = () => {
-    const { pathname } = location
-    return pathname === "/"
-  }
+  // const getShowHeaderOne = () => {
+  //   const { pathname } = location
+  //   return pathname === "/"
+  // }
 
-  const getShowHeaderTwo = () => {
-    const { pathname } = location
-    return (
-      pathname === "/movies" ||
-      pathname === "/saved-movies" ||
-      pathname === "/profile"
-    )
-  }
+  // const getShowHeaderTwo = () => {
+  //   const { pathname } = location
+  //   return (
+  //     pathname === "/movies" ||
+  //     pathname === "/saved-movies" ||
+  //     pathname === "/profile"
+  //   )
+  // }
 
   function handleOpen() {
     setIsClicked(true)
@@ -34,7 +34,7 @@ function Header() {
 
   return (
     <>
-      {getShowHeaderOne() && (
+     {!loggedIn ? (
         <header className="header">
           <Link to="/" className="logo">
             <img src={logo} alt="лого" />
@@ -48,10 +48,8 @@ function Header() {
             </Link>
           </div>
         </header>
-      )}
-
-      {getShowHeaderTwo() && (
-        <header className="header header_green">
+     ) : (
+      <header className="header header_gray">
           <Link to="/" className="logo">
             <img src={logo} alt="лого" />
           </Link>
@@ -77,7 +75,7 @@ function Header() {
           </div>
           {isClicked ? <Navigation handleCloseMenu={handleCloseMenu} /> : ""}
         </header>
-      )}
+)}
     </>
   )
 }
