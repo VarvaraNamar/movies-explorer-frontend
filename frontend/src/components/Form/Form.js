@@ -5,19 +5,13 @@ import "./Form.css"
 
 function Form({ link, linkText, title, buttonText, children,  question, onSubmit,
   isLoading, isDisabledButton }) {
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      if(!isLoading) {
-        onSubmit();
-      }
-    }
   return (
     <div className="form__block">
       <Link to="/" className="logo">
         <img src={logo} alt="лого" />
       </Link>
       <h3 className="form__title">{title}</h3>
-      <form className="form" id="form" noValidate onSubmit={handleSubmit}>
+      <form className="form" id="form" noValidate onSubmit={onSubmit}>
         {children}
         <button className={
             isLoading || isDisabledButton
